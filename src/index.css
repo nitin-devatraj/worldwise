@@ -15,6 +15,16 @@
   --color-light--3: #d6dee0;
 }
 
+/* scrollbar width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* scrollbar Handle */
+::-webkit-scrollbar-thumb {
+  background: #444;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -67,12 +77,3 @@ input:focus {
   padding: 1rem 3rem;
   border-radius: 5px;
 }
-
-/*
-"importCSSModule": {
-    "prefix": "csm",
-    "scope": "javascript,typescript,javascriptreact",
-    "body": ["import styles from './${TM_FILENAME_BASE}.module.css'"],
-    "description": "Import CSS Module as `styles`"
-  },
-*/
