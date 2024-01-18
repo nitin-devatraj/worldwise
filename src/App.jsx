@@ -11,10 +11,15 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="product" element={<Product />} />
-        <Route path="pricing" element={<Pricing />} />
-        <Route path="app" element={<AppLayout />} />
-        <Route path="login" element={<Login />} />
+        <Route path="/product" element={<Product />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/app" element={<AppLayout />}>
+          <Route index element={<p>list of cities</p>} />
+          <Route path="cities" element={<p>list of cities</p>} />
+          <Route path="countries" element={<p>list of country</p>} />
+          <Route path="form" element={<p>form</p>} />
+        </Route>
+        <Route path="/login" element={<Login />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
