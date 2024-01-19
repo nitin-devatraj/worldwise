@@ -7,6 +7,7 @@ import Login from "./pages/login/Login";
 import AppLayout from "./pages/app-layout/AppLayout";
 import PageNotFound from "./pages/page-not-found/PageNotFound";
 import CityList from "./pages/app-layout/sidebar/city-list/CityList";
+import CountryList from "./pages/app-layout/sidebar/countries-list/CountryList";
 
 export default function App() {
   const [cities, setCities] = useState([]);
@@ -44,9 +45,8 @@ export default function App() {
             element={<CityList cities={cities} isLoading={isLoading} />}
           />
           <Route
-            path="countries
-          "
-            element={<p>list of country</p>}
+            path="countries"
+            element={<CountryList cities={cities} isLoading={isLoading} />}
           />
           <Route path="form" element={<p>form</p>} />
         </Route>
