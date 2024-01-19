@@ -8,6 +8,7 @@ import AppLayout from "./pages/app-layout/AppLayout";
 import PageNotFound from "./pages/page-not-found/PageNotFound";
 import CityList from "./pages/app-layout/sidebar/city-list/CityList";
 import CountryList from "./pages/app-layout/sidebar/countries-list/CountryList";
+import CityDetails from "./pages/app-layout/sidebar/city-details/CityDetails";
 
 export default function App() {
   const [cities, setCities] = useState([]);
@@ -44,6 +45,7 @@ export default function App() {
             path="cities"
             element={<CityList cities={cities} isLoading={isLoading} />}
           />
+          <Route path="cities/:id" element={<CityDetails />} />
           <Route
             path="countries"
             element={<CountryList cities={cities} isLoading={isLoading} />}
