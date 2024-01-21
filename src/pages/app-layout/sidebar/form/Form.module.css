@@ -23,8 +23,10 @@
 .flag {
   position: absolute;
   right: 1rem;
-  top: 2.7rem;
-  font-size: 2.8rem;
+  top: 3.5rem;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-dark--2);
 }
 
 .form.loading {

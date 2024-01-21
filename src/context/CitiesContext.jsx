@@ -36,9 +36,29 @@ export default function CitiesContextProvider({ children }) {
     }
   }
 
+  async function createCity(newCity) {
+    try {
+      setIsLoading(true);
+      const res = await fetch(`${import.meta.env.VITE_BASE_URL}/cities`, {
+        method: "POST",
+        body: JSON.stringify(newCity),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await res.json();
+      setCities((cities) => [...cities, data]);
+      console.log(data);
+    } catch (error) {
+      alert("there was an error loading the data");
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
   return (
     <CitiesContext.Provider
-      value={{ cities, isLoading, cityDetails, fetchCityDetails }}
+      value={{ cities, isLoading, cityDetails, fetchCityDetails, createCity }}
     >
       {children}
     </CitiesContext.Provider>

@@ -10,7 +10,7 @@
         "lat": 38.727881642324164,
         "lng": -9.140900099907554
       },
-      "id": 73930385
+      "id": "73930385"
     },
     {
       "cityName": "Madrid",
@@ -22,7 +22,7 @@
         "lat": 40.46635901755316,
         "lng": -3.7133789062500004
       },
-      "id": 17806751
+      "id": "17806751"
     },
     {
       "cityName": "Berlin",
@@ -34,7 +34,67 @@
         "lat": 52.53586782505711,
         "lng": 13.376933665713324
       },
-      "id": 98443197
+      "id": "98443197"
+    },
+    {
+      "id": "476a",
+      "cityName": "Ede",
+      "country": "Netherlands (Kingdom of the)",
+      "date": "2024-01-21T12:26:13.099Z",
+      "emoji": "NL",
+      "notes": "text",
+      "position": {
+        "lat": "52.093652460123316",
+        "lng": "5.646433129466751"
+      }
+    },
+    {
+      "id": "af71",
+      "cityName": "Eghezee",
+      "country": "Belgium",
+      "date": "2024-01-21T12:26:57.185Z",
+      "emoji": "BE",
+      "notes": "",
+      "position": {
+        "lat": "50.55773953946615",
+        "lng": "4.919570199842114"
+      }
+    },
+    {
+      "id": "3663",
+      "cityName": "Gerstungen",
+      "country": "Germany",
+      "date": "2024-01-21T12:42:45.298Z",
+      "emoji": "DE",
+      "notes": "",
+      "position": {
+        "lat": "50.98749248900231",
+        "lng": "10.102461253650588"
+      }
+    },
+    {
+      "id": "b68d",
+      "cityName": "Gora Swietej Malgorzaty",
+      "country": "Poland",
+      "date": "2024-01-21T12:44:00.757Z",
+      "emoji": "PL",
+      "notes": "",
+      "position": {
+        "lat": "52.03897537753422",
+        "lng": "19.3304338668828"
+      }
+    },
+    {
+      "id": "3abe",
+      "cityName": "Jakubow",
+      "country": "Poland",
+      "date": "2024-01-21T12:44:09.802Z",
+      "emoji": "PL",
+      "notes": "",
+      "position": {
+        "lat": "52.18740054551666",
+        "lng": "21.70525787130462"
+      }
     }
   ]
 }
