@@ -11,6 +11,7 @@ import CountryList from "./pages/app-layout/sidebar/countries-list/CountryList";
 import CityDetails from "./pages/app-layout/sidebar/city-details/CityDetails";
 import Form from "./pages/app-layout/sidebar/form/Form";
 import AuthContextProvider from "./context/AuthContext";
+import ProtectedRoute from "./pages/ProtectedRoute";
 
 export default function App() {
   return (
@@ -21,7 +22,14 @@ export default function App() {
             <Route path="/" element={<Homepage />} />
             <Route path="/product" element={<Product />} />
             <Route path="/pricing" element={<Pricing />} />
-            <Route path="/app" element={<AppLayout />}>
+            <Route
+              path="/app"
+              element={
+                <ProtectedRoute>
+                  <AppLayout />
+                </ProtectedRoute>
+              }
+            >
               <Route index element={<Navigate replace to="cities" />} />
               <Route path="cities" element={<CityList />} />
               <Route path="cities/:id" element={<CityDetails />} />
