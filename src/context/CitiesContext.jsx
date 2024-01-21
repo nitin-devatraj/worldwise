@@ -48,9 +48,22 @@ export default function CitiesContextProvider({ children }) {
       });
       const data = await res.json();
       setCities((cities) => [...cities, data]);
-      console.log(data);
     } catch (error) {
-      alert("there was an error loading the data");
+      alert("there was an error creating the city...");
+    } finally {
+      setIsLoading(false);
+    }
+  }
+
+  async function deleteCity(id) {
+    try {
+      setIsLoading(true);
+      await fetch(`${import.meta.env.VITE_BASE_URL}/cities/${id}`, {
+        method: "DELETE",
+      });
+      setCities((cities) => cities.filter((city) => city.id !== id));
+    } catch (error) {
+      alert("there was an error deleting the city...");
     } finally {
       setIsLoading(false);
     }
@@ -58,7 +71,14 @@ export default function CitiesContextProvider({ children }) {
 
   return (
     <CitiesContext.Provider
-      value={{ cities, isLoading, cityDetails, fetchCityDetails, createCity }}
+      value={{
+        cities,
+        isLoading,
+        cityDetails,
+        fetchCityDetails,
+        createCity,
+        deleteCity,
+      }}
     >
       {children}
     </CitiesContext.Provider>
