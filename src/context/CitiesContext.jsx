@@ -1,4 +1,10 @@
-import { createContext, useEffect, useReducer, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useEffect,
+  useReducer,
+  useState,
+} from "react";
 
 export const CitiesContext = createContext();
 
@@ -75,21 +81,26 @@ export default function CitiesContextProvider({ children }) {
     fetchCities();
   }, []);
 
-  async function fetchCityDetails(id) {
-    if (Number(id) === cityDetails.id) return;
+  const fetchCityDetails = useCallback(
+    async function fetchCityDetails(id) {
+      if (Number(id) === cityDetails.id) return;
 
-    try {
-      dispatch({ type: "loading" });
-      const res = await fetch(`${import.meta.env.VITE_BASE_URL}/cities/${id}`);
-      const data = await res.json();
-      dispatch({ type: "city/loaded", payload: data });
-    } catch (error) {
-      dispatch({
-        type: "rejected",
-        payload: "There was an error loading the city...",
-      });
-    }
-  }
+      try {
+        dispatch({ type: "loading" });
+        const res = await fetch(
+          `${import.meta.env.VITE_BASE_URL}/cities/${id}`
+        );
+        const data = await res.json();
+        dispatch({ type: "city/loaded", payload: data });
+      } catch (error) {
+        dispatch({
+          type: "rejected",
+          payload: "There was an error loading the city...",
+        });
+      }
+    },
+    [cityDetails.id]
+  );
 
   async function createCity(newCity) {
     try {

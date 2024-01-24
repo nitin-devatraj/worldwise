@@ -21,7 +21,7 @@ function CityDetails() {
     function () {
       fetchCityDetails(id);
     },
-    [id]
+    [id, fetchCityDetails]
   );
 
   const { cityName, emoji, date, notes } = cityDetails;
